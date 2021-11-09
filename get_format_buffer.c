@@ -57,6 +57,8 @@ char* (*get_spec_func(char S))(va_list)
 	format_spec choice[] = {
 		{'c', print_char},
 		{'s', print_string},
+		{'i', print_integer},
+		{'d', print_integer},
 		{0, NULL}
 	};
 
