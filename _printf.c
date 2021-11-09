@@ -23,7 +23,8 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] != '%') /* copy format into buffer till % */
 		{
-			buffer[length++] = format[i++];
+			length = check_buffer_length(buffer, length);
+            buffer[length++] = format[i++];
 			tot_length++;
 		}
 		else /* if format[i] = % */
@@ -37,7 +38,8 @@ int _printf(const char *format, ...)
 			}
 			if (format[i] == '%') /* handles %% */
 			{
-				buffer[length++] = format[i];
+				length = check_buffer_length(buffer, length);
+                buffer[length++] = format[i];
 				tot_length++;
 			}
 			else
@@ -45,7 +47,8 @@ int _printf(const char *format, ...)
 				func = get_spec_func(format[i]); /* looks up required function */
 				if (func == NULL) /* if it doesn't find a spec, print % */
 				{
-					buffer[length++] = '%';
+					length = check_buffer_length(buffer, length);
+                    buffer[length++] = '%';
 					tot_length++;
 					buffer[length++] = format[i];
 					tot_length++;
@@ -61,13 +64,15 @@ int _printf(const char *format, ...)
 					}
 					if (format[i] == 'c' && str[0] == '\0')
 					{
-						buffer[length++] = '\0';
+						length = check_buffer_length(buffer, length);
+                        buffer[length++] = '\0';
 						tot_length++;
 					}
 					j = 0;
 					while (str[j] != '\0')
 					{
-						buffer[length++] = str[j];
+						length = check_buffer_length(buffer, length);
+                        buffer[length++] = str[j];
 						tot_length++;
 						j++;
 					}
