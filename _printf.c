@@ -1,5 +1,9 @@
 #include "main.h"
-
+/**
+ * _printf - miniprint function
+ * @format: what's to be printed
+ * Return: length of what was printed
+ */
 int _printf(const char *format, ...)
 {
     int length = 0, tot_length = 0, i = 0, j = 0;
