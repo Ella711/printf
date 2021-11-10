@@ -9,7 +9,7 @@ char *create_buffer(void)
 {
 	char *buffer;
 
-	buffer = malloc(sizeof(char) * 1024);
+	buffer = malloc(sizeof(char) * 2048);
 	if (buffer == NULL)
 		return (NULL);
 	return (buffer);
