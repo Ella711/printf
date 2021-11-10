@@ -1,4 +1,23 @@
 #include "main.h"
+
+/**
+ * check_buffer_length - if it goes over buffer length
+ * it'll print everything in current buffer and revert back to 0
+ *@buffer: buffer to hold string to print
+ *@length: length/position of buffer
+ * Return: a string
+ */
+
+int check_buffer_length(char *buffer, int length)
+{
+	if (length > 1020)
+	{
+		write(1, buffer, length);
+		length = 0;
+	}
+	return (length);
+}
+
 /**
  * _printf - miniprint function
  * @format: what's to be printed
@@ -24,7 +43,7 @@ int _printf(const char *format, ...)
 		if (format[i] != '%') /* copy format into buffer till % */
 		{
 			length = check_buffer_length(buffer, length);
-            buffer[length++] = format[i++];
+			buffer[length++] = format[i++];
 			tot_length++;
 		}
 		else /* if format[i] = % */
@@ -39,7 +58,7 @@ int _printf(const char *format, ...)
 			if (format[i] == '%') /* handles %% */
 			{
 				length = check_buffer_length(buffer, length);
-                buffer[length++] = format[i];
+				buffer[length++] = format[i];
 				tot_length++;
 			}
 			else
@@ -48,7 +67,7 @@ int _printf(const char *format, ...)
 				if (func == NULL) /* if it doesn't find a spec, print % */
 				{
 					length = check_buffer_length(buffer, length);
-                    buffer[length++] = '%';
+					buffer[length++] = '%';
 					tot_length++;
 					buffer[length++] = format[i];
 					tot_length++;
@@ -65,14 +84,14 @@ int _printf(const char *format, ...)
 					if (format[i] == 'c' && str[0] == '\0')
 					{
 						length = check_buffer_length(buffer, length);
-                        buffer[length++] = '\0';
+						buffer[length++] = '\0';
 						tot_length++;
 					}
 					j = 0;
 					while (str[j] != '\0')
 					{
 						length = check_buffer_length(buffer, length);
-                        buffer[length++] = str[j];
+						buffer[length++] = str[j];
 						tot_length++;
 						j++;
 					}

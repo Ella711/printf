@@ -24,7 +24,6 @@ char *create_buffer(void);
 void write_buffer(char *buffer, int length, va_list arguements);
 char *_strcpy(char *dest, char *src);
 int _strlen(char *s);
-/* int _putchar(char c); */
 int check_buffer_length(char *buffer, int length);
 
 /* picks a functions based on format specifier */
@@ -34,9 +33,8 @@ char* (*get_spec_func(char c))(va_list);
 
 int _printf(const char *format, ...);
 char *print_char(va_list arguements);
-/* char *print_int(va_list); can be used for char and decimal (%d %i)? */
-/* int print_int(va_list arguements); */
-/* char *print_special(va_list); %% */
+char *print_integer(va_list arguements);
+char *integer_to_string(int decimal_places, int length, int num);
 char *print_string(va_list arguements);
 
 
