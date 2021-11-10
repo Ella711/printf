@@ -1,4 +1,23 @@
 #include "main.h"
+
+/**
+ * check_buffer_length - if it goes over buffer length
+ * it'll print everything in current buffer and revert back to 0
+ *@buffer: buffer to hold string to print
+ *@length: length/position of buffer
+ * Return: a string
+ */
+
+int check_buffer_length(char *buffer, int length)
+{
+	if (length > 1020)
+	{
+		write(1, buffer, length);
+		length = 0;
+	}
+	return (length);
+}
+
 /**
  * _printf - miniprint function
  * @format: what's to be printed
