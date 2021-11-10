@@ -1,0 +1,31 @@
+.TH _PRINTF "9 NOVEMBER 2021" "_printf man page"
+.SH NAME
+.B _printf - print formatted output conversion.
+.SH SYNOPSIS
+Header #include "holberton.h" is needed, to use this function.
+_printf - FORMAT [ARGUMENT]...
+_printf - Options.
+
+.SH DESCRIPTION
+The _printf () function is used to print the "characters, strings, floats, integers, decimals, octals, and binaries".
+Print ARGUMENTS(s) according to FORMAT.
+.SH USAGE
+.PP
+%d, %i - print a number "%d" referring to a decimal number or "%i" to an integer, both are integer type assignments.
+.PP
+%c - print characters.
+.PP
+%s - Print the strings.
+
+.SH FORMAT
+The format string is a character string, beginning and ending in its initial shift state, if any. The format string is composed of zero or more directives: ordinary charatcers (not %), which are copied unchanged to the output stream; and conversion specifications, each of which results in fetching zero or more subsequent arguments.
+.SH RETURN VALUES 
+The _printf() function returns an integer representing the number of symbols printed not counting \\0 for the string.
+If the function fails, it returns a negative number.
+.SH SEE ALSO
+.I printf(3)
+.SH BUGS
+No know bugs.
+.SH AUTHOR
+Ornella Russo
+Marco Antonio Ordóñez
