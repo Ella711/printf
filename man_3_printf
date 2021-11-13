@@ -2,12 +2,12 @@
 .SH NAME
 .B _printf - print formatted output conversion.
 .SH SYNOPSIS
-Header #include "holberton.h" is needed, to use this function.
+Header #include "main.h" is needed, to use this function.
 _printf - FORMAT [ARGUMENT]...
 _printf - Options.
 
 .SH DESCRIPTION
-The _printf () function is used to print the "characters, strings, floats, integers, decimals, octals, and binaries".
+The _printf () function is used to print the "characters, strings and integers".
 Print ARGUMENTS(s) according to FORMAT.
 .SH USAGE
 .PP
