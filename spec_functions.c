@@ -1,15 +1,15 @@
 #include "main.h"
 /**
  * print_char - prints a char
- *@arguements: valist
+ *@arguments: valist
  * Return: a char in a string
  */
-char *print_char(va_list arguements)
+char *print_char(va_list arguments)
 {
 	char *str;
 	char c;
 
-	c = va_arg(arguements, int);
+	c = va_arg(arguments, int);
 
 	if (c == 0)
 		c = '\0';
@@ -25,16 +25,16 @@ char *print_char(va_list arguements)
 }
 /**
  * print_string - prints a string
- *@arguements: valist
+ *@arguments: valist
  * Return: a string
  */
-char *print_string(va_list arguements)
+char *print_string(va_list arguments)
 {
 	char *str;
 	char *copy;
 	int len;
 
-	str = va_arg(arguements, char *);
+	str = va_arg(arguments, char *);
 	if (str == NULL)
 		str = "(null)";
 
@@ -88,15 +88,15 @@ char *integer_to_string(int decimal_places, int length, int num)
 }
 
 /**
- * print_integer - finds length of integer from arguements
- * @arguements: takes arg
+ * print_integer - finds length of integer from arguments
+ * @arguments: takes arg
  * Return: function to turn into string
  **/
-char *print_integer(va_list arguements)
+char *print_integer(va_list arguments)
 {
 	int length, decimal_places, num, temp_num;
 
-	num = va_arg(arguements, int);
+	num = va_arg(arguments, int);
 	temp_num = num;
 	length = 0;
 	decimal_places = 1;

@@ -10,7 +10,7 @@ int _printf(const char *format, ...)
 	int length = 0, tot_length = 0, i = 0, j = 0;
 	char *buffer, *str;
 	char* (*func)(va_list);
-	va_list arguements;
+	va_list arguments;
 
 	if (format == NULL)
 		return (-1);
@@ -18,7 +18,7 @@ int _printf(const char *format, ...)
 	buffer = create_buffer();
 	if (buffer == NULL)
 		return (-1);
-	va_start(arguements, format);
+	va_start(arguments, format);
 
 	while (format[i] != '\0')
 	{
@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
 			i++;
 			if (format[i] == '\0') /* nothing after the % */
 			{
-				va_end(arguements);
+				va_end(arguments);
 				free(buffer);
 				return (-1);
 			}
@@ -53,10 +53,10 @@ int _printf(const char *format, ...)
 				}
 				else /* func will return str and copy to buffer */
 				{
-					str = func(arguements);
+					str = func(arguments);
 					if (str == NULL)
 					{
-						va_end(arguements);
+						va_end(arguments);
 						free(buffer);
 						return (-1);
 					}
@@ -78,7 +78,7 @@ int _printf(const char *format, ...)
 			i++;
 		}
 	}
-	write_buffer(buffer, length, arguements);
+	write_buffer(buffer, length, arguments);
 	return (tot_length);
 }
 

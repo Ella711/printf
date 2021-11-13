@@ -19,10 +19,10 @@ char *create_buffer(void)
  * write_buffer - prints what's saved in the buffer
  *@buffer: string of what's to be printed
  *@length: length of string/buffer
- *@arguements: valist
+ *@arguments: valist
  */
 
-void write_buffer(char *buffer, int length, va_list arguements)
+void write_buffer(char *buffer, int length, va_list arguments)
 {
 	char *buffr;
 
@@ -30,7 +30,7 @@ void write_buffer(char *buffer, int length, va_list arguements)
 
 	write(1, buffr, length);
 	free(buffr);
-	va_end(arguements);
+	va_end(arguments);
 }
 
 /**

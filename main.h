@@ -21,7 +21,7 @@ typedef struct mini
 
 /* secondary functions */
 char *create_buffer(void);
-void write_buffer(char *buffer, int length, va_list arguements);
+void write_buffer(char *buffer, int length, va_list arguments);
 char *_strcpy(char *dest, char *src);
 int _strlen(char *s);
 int check_buffer_length(char *buffer, int length);
@@ -32,10 +32,10 @@ char* (*get_spec_func(char c))(va_list);
 /* printf functions */
 
 int _printf(const char *format, ...);
-char *print_char(va_list arguements);
-char *print_integer(va_list arguements);
+char *print_char(va_list arguments);
+char *print_integer(va_list arguments);
 char *integer_to_string(int decimal_places, int length, int num);
-char *print_string(va_list arguements);
+char *print_string(va_list arguments);
 
 
 #endif /* MAIN_H */
